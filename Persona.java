@@ -22,6 +22,9 @@ public class Persona
   private String apellido;
   private int anioNacimiento;
 
+  //parte del punto 9 donde pide que modifiquemos  desea mandar una tarjeta de felicitaciones el día del cumpleaños de sus clientes 
+
+  private Calendar fechaNacimiento;
 
 
    /**
@@ -40,16 +43,27 @@ public class Persona
     this.setApellido(p_apell);
     this.setAnio(p_anio);
   }
+
+  Persona(int p_dni,String p_nombre, String p_apell,Calendar p_anio)
+  {
+    this.setDni(p_dni);
+    this.setName(p_nombre);
+    this.setApellido(p_apell);
+    this.setFecha(p_anio);
+  }
   /**
   *Setter: modifican los atributos de la clase de manera individual.
   *setDni: Permitir modificar el DNI de la persona si fuera necesario.
   *@param p_dni
   */
-  public void setDni(int p_dni)
+  private void setDni(int p_dni)
   {
      this.nroDni=p_dni;
   }
-  
+  private void setFecha(Calendar p_calendar)
+  {
+    this.fechaNacimiento=p_calendar;
+  }
   
    /**
      * Asigna un nuevo valor al nombre de la persona.
@@ -58,7 +72,7 @@ public class Persona
      * 
      * @param p_nombre seria el nuevo nombre de la persona
      */
-  public void setName( String p_name)
+  private void setName( String p_name)
   {
     this.nombre=p_name;
   }
@@ -67,7 +81,7 @@ public class Persona
      * Asigna un nuevo valor al apellido de la persona. 
      * @param p_apellido El nuevo apellido de la persona.
      */
-  public void setApellido(String p_ape)
+  private void setApellido(String p_ape)
   {
     this.apellido=p_ape;
   }
@@ -77,10 +91,11 @@ public class Persona
      * 
      * @param p_anio El nuevo año de nacimiento de la persona.
      */
-  public void setAnio(int p_anio)
+  private void setAnio(int p_anio)
   {
     this.anioNacimiento=p_anio;
   }
+  
   //getter = retornan los valores que contienen los atributos de la clase  de forma indivual.
   public int getDni()
   {
@@ -125,6 +140,10 @@ public class Persona
      * 
      * @return Un String que contiene el nombre y apellido de la persona.
      */
+  public Calendar getFechadeNacimiento()
+  {
+    return this.fechaNacimiento;
+  }
   public String nomYApe()
   {
     return (getNombre() + getApellido());
@@ -139,7 +158,16 @@ public class Persona
   {
     return ( getApellido() + getNombre());
   }
-
+  
+  public boolean esCumpleaños()
+  {
+    Calendar fechaHoy = Calendar.getInstance();
+    if (this.getFechadeNacimiento()== fechaHoy) {
+      return true;
+    }else{
+      return false;
+    }
+  }
   /**
    * Muestra en la consola los datos de la persona.
    * 
