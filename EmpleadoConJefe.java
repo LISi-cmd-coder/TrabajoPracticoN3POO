@@ -34,6 +34,7 @@ public class EmpleadoConJefe
       this.setApellido(p_apellido);
       this.setSueldobasico(p_importe);
       this.setAnio(p_fecha.get(Calendar.YEAR)); // enviamos como parametro el año obtenido  al usar los gets del objeto Calendar de al set de anio...
+      this.setFechaIngreso(p_fecha);
       this.setEmpleadoConJefe(null);
    }
 
@@ -44,6 +45,7 @@ public class EmpleadoConJefe
       this.setApellido(p_apellido);
       this.setSueldobasico(p_importe);
       this.setAnio(p_fecha.get(Calendar.YEAR)); // enviamos como parametro el año obtenido  al usar los gets del objeto Calendar de al set de anio...
+      this.setFechaIngreso(p_fecha);
       this.setEmpleadoConJefe(p_jefe);
    }
 
