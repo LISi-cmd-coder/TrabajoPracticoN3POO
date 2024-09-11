@@ -116,13 +116,13 @@ public class EmpleadoConJefe
    public double adicional(){
       int aniosdeServicios = this.antiguedad();
       if(aniosdeServicios < 2){
-          return (this.sueldoBasico + this.porcentaje(2));
+          return (this.porcentaje(2));
       }else if (aniosdeServicios >= 2 && aniosdeServicios <10 ) {
-          return (this.sueldoBasico + this.porcentaje(4));
+          return (this.porcentaje(4));
       }else if(aniosdeServicios >10 ){
-          return (this.sueldoBasico + this.porcentaje(6));
+          return (this.porcentaje(6));
       }
-      return this.sueldoBasico; //caso donde no se cumple ni uno ( tuve que poner esto para solucionar un error del codigo ya que si no ponia un return fuera de los if anidados no funcionaba.)
+      return 0.0; //caso donde no se cumple ni uno ( tuve que poner esto para solucionar un error del codigo ya que si no ponia un return fuera de los if anidados no funcionaba.)
  }
    public double descuento()
  {
