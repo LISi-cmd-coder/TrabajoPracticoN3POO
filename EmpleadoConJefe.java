@@ -160,7 +160,11 @@ public class EmpleadoConJefe
          System.out.println(" Gerente General");
       }
    }
-
+ public String mostrarLinea(){
+            String cuil = String.valueOf(getCuil()); //casteamos el valor original a un string
+            String plata = String.valueOf(getSueldo());//casteamos el valor original a un string.
+            return cuil +" "+ this.nomYapell() +"..........."+"$ "+ plata;
+    }
    public boolean esAniversario()
    {
      Calendar rightNow= Calendar.getInstance();
